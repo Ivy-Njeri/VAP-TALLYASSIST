@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VAP TallyAssist</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">VAP TallyAssist</div>
+      <ul class="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+        <li><a href="booking.html" class="active">Booking</a></li>
+        </nav>
+        </header>
+  
+  <section class="booking">
+  <h2>📅 Book a Training Slot</h2>
+  <p>Fill in your details to schedule your Tally training session with our experts.</p>
+
+ <form
+  action="https://formspree.io/f/xqabrgpa"
+  method="POST"
+> <label>Full Name:
+    <input type=" Full name" name="Full name">
+</label>
+  <label>
+    Email or Phone number:
+    <input type="email or phone number" name="email or phone number">
+  </label>
+  <label>
+    preffered date:
+    <input type="date" name="date">
+  </label>
+<label for="type">Training Type:</label><br>
+    <select name="type" id="type">
+      <option value="Basic">Basic Tally</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Inventory">Inventory</option>
+      <option value="Tax">Taxation (VAT, PAYE)</option>
+      <option value="All Inclusive">All Inclusive</option>
+    </select><br><br>
+  
+
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+  <footer>
+    <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
+  </footer>
+
+</body>
+</html>
