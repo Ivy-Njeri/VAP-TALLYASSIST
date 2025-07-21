@@ -1,54 +1,122 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>VAP TallySupport Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-  
+  <!-- Header / Navigation -->
   <header>
     <nav>
       <div class="logo">VAP TallyAssist</div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="training.html">Training</a></li>
-       <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="booking.html">Booking</a></li>
-        </nav>
-        </header>
-        
+      </ul>
+    </nav>
+  </header>
 
-  
-  <section class="hero">
-    <h1>Welcome to VAP TallyAssist</h1>
-    <p>Your trusted resource for Tally training, troubleshooting, and documentation.</p>
+  <!-- Search Section -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search modules or errors...">
+    <button onclick="performSearch()">🔍</button>
+    <div id="searchSuggestions" class="search-suggestions"></div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <h1>👋 Welcome to VAP TallyAssist!</h1>
+    <p>Your trusted resource for Tally training, troubleshooting, and documentation. 🎓</p>
     <a href="training.html" class="btn">Start Learning</a>
   </section>
 
-  
+  <!-- Features Section -->
   <section class="features">
     <div class="feature">
       <h2>📘 Tutorials</h2>
-      <p>Step-by-step guides on how to use Tally effectively.</p>
+      <p>Easy-to-follow lessons to help you master Tally, even if you're just starting.</p>
     </div>
+
     <div class="feature">
       <h2>💡 Error Solutions</h2>
       <p>Quick fixes and answers to common Tally errors.</p>
     </div>
+
     <div class="feature">
       <h2>📅 Book Training</h2>
       <p>Schedule training sessions with our experts directly online.</p>
     </div>
   </section>
 
-  
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 VAP Technologies. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+
+    const searchData = [
+      'Tally Installation Guide',
+      'Creating Company in Tally',
+      'Voucher Entry Tutorial',
+      'Balance Sheet Generation',
+      'GST Configuration Error',
+      'Backup and Restore',
+      'Reports in Tally',
+      'Stock Management',
+      'Payroll Setup',
+      'Data Synchronization Issues'
+    ];
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      if (query.length > 0) {
+        const filtered = searchData.filter(item =>
+          item.toLowerCase().includes(query)
+        );
+
+        if (filtered.length > 0) {
+          searchSuggestions.innerHTML = filtered
+            .map(item => `<div class="search-suggestion" onclick="selectSuggestion('${item}')">${item}</div>`)
+            .join('');
+          searchSuggestions.style.display = 'block';
+        } else {
+          searchSuggestions.style.display = 'none';
+        }
+      } else {
+        searchSuggestions.style.display = 'none';
+      }
+    });
+
+    function selectSuggestion(suggestion) {
+      searchInput.value = suggestion;
+      searchSuggestions.style.display = 'none';
+      performSearch();
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        alert(`Searching for: "${query}"`);
+        // In the future: window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.search-container')) {
+        searchSuggestions.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>

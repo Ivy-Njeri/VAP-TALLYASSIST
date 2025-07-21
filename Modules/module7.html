@@ -106,16 +106,82 @@
        <h4>Downloadable Notes</h4>
 <p><strong>Here is a more detailed PDF on financial Reports.</strong></p>
 <a href="../docs/📘 FINANCIAL REPORTS IN TALLY.pdf">Download Here</a>
+  
+  
+     <section class="quiz-section">
+<h3>Quick Quiz ✅</h3>
+  <p>1. The Balance Sheet shows:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-1')">A. The financial position at a specific point in time</button>
+  <button onclick="checkAnswer('B', 'quiz-result-1')">B. The company’s profit over a period of time</button>
+  <p id="quiz-result-1"></p>
+</section>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>2.Retained earnings are found in:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-2')">A.The Income Statement</button>
+  <button onclick="checkAnswer('B', 'quiz-result-2')">B. The Balance Sheet</button>
+  <p id="quiz-result-2"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>3. Assets =</p>
+  <button onclick="checkAnswer('A', 'quiz-result-3')">A.  Liabilities + Equity </button>
+  <button onclick="checkAnswer('B', 'quiz-result-3')">B.  Liabilities - Equity</button>
+  <p id="quiz-result-3"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>4.Accrued expenses are classified as:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-4')">A. Assets</button>
+  <button onclick="checkAnswer('B', 'quiz-result-4')">B.Liabilities</button>
+  <p id="quiz-result-4"></p>
+</section>
+
+<script>
+function checkAnswer(choice, resultId) {
+  const result = document.getElementById(resultId);
+  let correctAnswer = {
+    'quiz-result-1': 'A',  
+    'quiz-result-2': 'A',  
+    'quiz-result-3': 'B',
+    'quiz-result-4': 'B'
+  };
+
+  let feedback = {
+    'quiz-result-1': "✅ Correct!",
+    'quiz-result-2': "✅ Correct! ",
+    'quiz-result-3': "✅ Correct! ",
+    'quiz-result-4': "✅ Correct! "
+
+  };
+
+  if (choice === correctAnswer[resultId]) {
+    result.innerHTML = feedback[resultId];
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ Oops! Try again.";
+    result.style.color = "red";
+  }
+}
+</script>
+    </section>
   </main>
-  <div class="nav-buttons">
+    <div class="nav-buttons">
       <a class="back-button" href="module6.html">← Previous</a>
       <a class="next-button" href="module8.html">Next →</a>
     </div>
-    </section>
    
 <!-- Footer -->
   <footer>
     <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
+     <button onclick="scrollToTop()" title="Go to top">🔼 Back to Top</button>
   </footer>
+  
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
 </body>
 </html>

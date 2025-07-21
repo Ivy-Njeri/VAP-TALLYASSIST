@@ -17,6 +17,9 @@
     <p>Inventory, in a business context, refers to the goods and materials a company holds for sale or uses in production. It encompasses a range of items, including raw materials, work-in-progress, and finished goods. Essentially, inventory represents the assets a company has available for its operations, and its management is crucial for smooth functioning and profitability. 
         <h3>Here are the various forms in which inventories are held:</h3>
         
+
+
+        
 <h4>🧱Raw Materials:</h4>
 <p>These are the basic inputs used in the production process, like wood for furniture or fabric for clothing. </p>
 <h4>⚒️Work-in-Progress (WIP):</h4>
@@ -99,20 +102,91 @@
 <p><strong>Below is a more detailed explanation on inventory and inventory management. This will help you understand inventory management better😊</strong></p>
       <a href="../docs/📦 What is Inventory.pdf">Download the PDF Version</a>
     </p>
+
+<section class="quiz-section">
+<h3>Quick Quiz ✅</h3>
+  <p>What is Inventory?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-1')">A. Goods held for resale or use in production</button>
+  <button onclick="checkAnswer('B', 'quiz-result-1')">B. Office equipment</button>
+  <p id="quiz-result-1"></p>
 </section>
-  </main>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>What does FIFO stand for ?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-2')">A. First-In, First-Out</button>
+  <button onclick="checkAnswer('B', 'quiz-result-2')">B. First-In, Forgotten-Out</button>
+  <p id="quiz-result-2"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>LIFO assumes?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-3')">A. OLdest stock is sold first </button>
+  <button onclick="checkAnswer('B', 'quiz-result-3')">B. Newest stock is sold first</button>
+  <p id="quiz-result-3"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>The Weighted Average method:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-4')">A. Tracks each item separately</button>
+  <button onclick="checkAnswer('B', 'quiz-result-4')">B. Calculates average cost of items</button>
+  <p id="quiz-result-4"></p>
+</section>
+
+<script>
+function checkAnswer(choice, resultId) {
+  const result = document.getElementById(resultId);
+  let correctAnswer = {
+    'quiz-result-1': 'A',  
+    'quiz-result-2': 'A',  
+    'quiz-result-3': 'B',
+    'quiz-result-4': 'B'
+  };
+
+  let feedback = {
+    'quiz-result-1': "✅ Correct!",
+    'quiz-result-2': "✅ Correct! ",
+    'quiz-result-3': "✅ Correct! ",
+    'quiz-result-4': "✅ Correct! ",
+
+  };
+
+  if (choice === correctAnswer[resultId]) {
+    result.innerHTML = feedback[resultId];
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ Oops! Try again.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+  </main> do you see any issues
+</section>
 
 <div class="nav-buttons">
       <a class="back-button" href="module2.html">← Previous</a>
       <a class="next-button" href="module4.html">Next →</a>
     </div>
+    
+  
+
+
+
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
+     <button onclick="scrollToTop()" title="Go to top">🔼 Back to Top</button>
   </footer>
+  
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
   </body>
 </html>
 
 
-
+ 

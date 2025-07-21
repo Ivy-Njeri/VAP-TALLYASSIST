@@ -82,6 +82,63 @@
       </ul>
       <p><strong>Here is a more detailed PDF version to help you understand payrolls better</strong></p>
       <a href="../docs/1.pdf">📄Download here.</a>
+      <section class="quiz-section">
+<h3>Quick Quiz ✅</h3>
+  <p>1.PAYE (Pay As You Earn) is calculated on:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-1')">A.Gross income after deductions </button>
+  <button onclick="checkAnswer('B', 'quiz-result-1')">B. Taxable income before deductions</button>
+  <p id="quiz-result-1"></p>
+</section>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>2.A payroll register contains:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-2')">A. Names only</button>
+  <button onclick="checkAnswer('B', 'quiz-result-2')">B. Full salary and deduction details </button>
+  <p id="quiz-result-2"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>3.Which of the following is a statutory deduction in Kenya?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-3')">A.  Overtime </button>
+  <button onclick="checkAnswer('B', 'quiz-result-3')">B.  NHIF</button>
+  <p id="quiz-result-3"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>4.When an employee receives a housing allowance, it is:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-4')">A.Taxable</button>
+  <button onclick="checkAnswer('B', 'quiz-result-4')">B.Fully exempt from tax</button>
+  <p id="quiz-result-4"></p>
+</section>
+
+<script>
+function checkAnswer(choice, resultId) {
+  const result = document.getElementById(resultId);
+  let correctAnswer = {
+    'quiz-result-1': 'B',  
+    'quiz-result-2': 'B',  
+    'quiz-result-3': 'B',
+    'quiz-result-4': 'A'
+  };
+
+  let feedback = {
+    'quiz-result-1': "✅ Correct!",
+    'quiz-result-2': "✅ Correct!",
+    'quiz-result-3': "✅ Correct! ",
+    'quiz-result-4': "✅ Correct! "
+
+  };
+
+  if (choice === correctAnswer[resultId]) {
+    result.innerHTML = feedback[resultId];
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ Oops! Try again.";
+    result.style.color = "red";
+  }
+}
+</script>
     </section>
   </main>
   <div class="nav-buttons">
@@ -91,6 +148,12 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
+     <button onclick="scrollToTop()" title="Go to top">🔼 Back to Top</button>
   </footer>
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
 </body>
 </html>

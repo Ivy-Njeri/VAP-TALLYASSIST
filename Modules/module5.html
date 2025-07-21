@@ -81,6 +81,64 @@
       </ul>
       <p><strong>Here is a more detailed version to help you know and understand more on VAT/GST.</strong></p>
     <a href="../docs/🏷.pdf">Download here</a>
+    <section class="quiz-section">
+<h3>Quick Quiz ✅</h3>
+  <p>1.In VAT, tax is collected:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-1')">A. At each stage of value addition</button>
+  <button onclick="checkAnswer('B', 'quiz-result-1')">B. Only at the final retail stage</button>
+  <p id="quiz-result-1"></p>
+</section>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>2.Zero-rated supply under GST refers to:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-2')">A.Supply taxed at 0% but still eligible for ITC</button>
+  <button onclick="checkAnswer('B', 'quiz-result-2')">B. Supply completely excluded from the tax system</button>
+  <p id="quiz-result-2"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>3.Output VAT is:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-3')">A.  VAT paid on purchases </button>
+  <button onclick="checkAnswer('B', 'quiz-result-3')">B.  VAT charged on sales</button>
+  <p id="quiz-result-3"></p>
+</section>
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>4.GST replaces:</p>
+  <button onclick="checkAnswer('A', 'quiz-result-4')">A.All direct taxes</button>
+  <button onclick="checkAnswer('B', 'quiz-result-4')">B.Indirect taxes like VAT, Service Tax, Excise</button>
+  <p id="quiz-result-4"></p>
+</section>
+
+<script>
+function checkAnswer(choice, resultId) {
+  const result = document.getElementById(resultId);
+  let correctAnswer = {
+    'quiz-result-1': 'A',  
+    'quiz-result-2': 'A',  
+    'quiz-result-3': 'B',
+    'quiz-result-4': ''
+  };
+
+  let feedback = {
+    'quiz-result-1': "✅ Correct!",
+    'quiz-result-2': "✅ Correct! ",
+    'quiz-result-3': "✅ Correct! ",
+    'quiz-result-4': "✅ Correct! "
+
+  };
+
+  if (choice === correctAnswer[resultId]) {
+    result.innerHTML = feedback[resultId];
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ Oops! Try again.";
+    result.style.color = "red";
+  }
+}
+</script>
+
     </section>
     
   </main>
@@ -91,6 +149,13 @@
 <!-- Footer -->
   <footer>
     <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
+     <button onclick="scrollToTop()" title="Go to top">🔼 Back to Top</button>
   </footer>
+  
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
 </body>
 </html>

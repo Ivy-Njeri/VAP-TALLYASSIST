@@ -103,12 +103,65 @@
       </ul>
     </li>
   </ul>
-
-<section class="pdf-section">
+  <section class="pdf-section">
       <h3>📄 Downloadable Notes</h3>
       <p>Below is a detailed PDF version for offline study:</p>
       <a href="../docs/Module 2 Copy.pdf">Download here</a>
     </section>
+  <section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>What is the shortcut to create a new ledger in Tally?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-1')">A. Alt + C</button>
+  <button onclick="checkAnswer('B', 'quiz-result-1')">B. Ctrl + A</button>
+  <p id="quiz-result-1"></p>
+</section>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>What is the Golden rule for Nominal Account?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-2')">A. Debit all expenses and losses, credit all gains and incomes</button>
+  <button onclick="checkAnswer('B', 'quiz-result-2')">B. Credit all expenses and losses, debit all gains and incomes</button>
+  <p id="quiz-result-2"></p>
+</section>
+
+<section class="quiz-section">
+  <h3>Quick Quiz ✅</h3>
+  <p>How many vouchers are there in Tally?</p>
+  <button onclick="checkAnswer('A', 'quiz-result-3')">A. 7</button>
+  <button onclick="checkAnswer('B', 'quiz-result-3')">B. 5</button>
+  <p id="quiz-result-3"></p>
+</section>
+
+<script>
+function checkAnswer(choice, resultId) {
+  const result = document.getElementById(resultId);
+  let correctAnswer = {
+    'quiz-result-1': 'A',  
+    'quiz-result-2': 'A',  
+    'quiz-result-3': 'B'
+  };
+
+  let feedback = {
+    'quiz-result-1': "✅ Correct! Alt + C is the shortcut!",
+    'quiz-result-2': "✅ Correct! Debit expenses, credit incomes!",
+    'quiz-result-3': "✅ Correct! There are 5 vouchers in Tally!"
+  };
+
+  if (choice === correctAnswer[resultId]) {
+    result.innerHTML = feedback[resultId];
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ Oops! Try again.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+
+
+
+
+
 
     <div class="nav-buttons">
       <a class="back-button" href="module1.html">← Previous</a>
@@ -119,9 +172,15 @@
 
   </main>
 
-  <footer>
-    <p>© 2025 TallyAssist – Powered by VAP Technologies</p>
-  </footer>
-
+<footer>
+  <p>© 2025 TallyAssist – Powered by VAP Technologies</p>
+  
+  <button onclick="scrollToTop()" title="Go to top">🔼 Back to Top</button>
+</footer>
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
