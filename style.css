@@ -138,10 +138,10 @@ nav {
       transition: all 0.3s ease;
     }
 
-    .search-container input:focus {
+    /* .search-container input:focus {
       width: 350px;
       box-shadow: 0 6px 25px rgba(102, 126, 234, 0.3);
-    }
+    } */
 
     .search-container button {
       /*padding: 0.8rem 1.2rem;
@@ -190,6 +190,7 @@ nav {
     .search-suggestion {
       padding: 8px;
       cursor: pointer;
+      background-color: #ffffff;
     }
 
     .search-suggestion:hover {
@@ -989,7 +990,6 @@ footer {
 }
 input[type="text"], 
 .search-button, 
-.navbar, 
 .hero-section, 
 button {
   border-radius: 25px;
