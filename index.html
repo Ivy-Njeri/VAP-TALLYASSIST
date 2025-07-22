@@ -8,31 +8,24 @@
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <nav>
-      <div class="logo">VAP TallyAssist</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="training.html">Training</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="booking.html">Booking</a></li>
-      </ul>
-    </nav>
-    <!-- mobile-nav.html -->
-<button class="hamburger" onclick="toggleMobileNav()">☰ Menu</button>
-
-<nav class="mobile-nav" id="mobileNav">
-  <a href="index.html">🏠 Home</a>
-  <a href="booking.html">📝 Booking</a>
-  <a href="training.html">🎓 Training</a>
-  <a href="contact.html">📞 Contact</a>
-  <a href="about.html">ℹ️ About</a>
-</nav>
+  <header class="navbar">
+  <div class="logo">VAP TallyAssist</div>
+  
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="training.html">Training</a>
+    <a href="booking.html">Booking</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 
-  </header>
+
+  
 
   <!-- Search Section -->
   <div class="search-container" style="position: relative;">
@@ -108,7 +101,6 @@
     }
   });
 
-  // Hide suggestions when clicking outside the input or suggestions
   document.addEventListener('click', function (e) {
     if (!e.target.closest('#searchInput') && !e.target.closest('#searchSuggestions')) {
       searchSuggestions.style.display = 'none';
