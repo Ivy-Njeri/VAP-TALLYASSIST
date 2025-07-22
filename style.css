@@ -204,9 +204,11 @@ nav {
   align-items: right;
   background-color: #004aad;
   padding: 15px 20px;
+
   color: white;
   position: relative;
-  z-index: 1000;
+ /* z-index: 1000;*/
+ border: none;
 }
 
 .logo {
@@ -219,7 +221,7 @@ nav {
 .nav-links {
   display: flex;
   gap: 20px;
-  text-align: end;
+  text-align:left;
 }
 
 .nav-links a {
@@ -258,6 +260,7 @@ nav {
     top: 60px;
     left: 0;
     width: 100%;
+    text-align: right;
   }
 
   .nav-links a {
