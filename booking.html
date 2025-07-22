@@ -34,15 +34,15 @@
   action="https://formspree.io/f/xqabrgpa"
   method="POST"
 > <label>Full Name:
-    <input type=" Full name" name="Full name">
+    <input type=" Full name" name="Full name" required> 
 </label>
   <label>
     Email or Phone number:
-    <input type="email or phone number" name="email or phone number">
+    <input type="email or phone number" name="email or phone number" required>
   </label>
   <label>
     preffered date:
-    <input type="date" name="date">
+    <input type="date" name="date" required>
   </label>
 <label for="type">Training Type:</label><br>
     <select name="type" id="type">
@@ -51,7 +51,7 @@
       <option value="Inventory">Inventory and Inventory managment</option>
       <option value="Tax">Taxation (VAT, PAYE, GST)</option>
       <option value="All Inclusive">All Inclusive</option>
-    </select><br><br>
+    </select required><br><br>
   
 
     <button type="submit">📅Book a session</button>
@@ -62,6 +62,13 @@
     <p>&copy; 2025 TallyAssist – Powered by VAP Technologies</p>
   </footer>
 
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
 
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
