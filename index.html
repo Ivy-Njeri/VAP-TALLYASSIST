@@ -20,10 +20,22 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <!-- mobile-nav.html -->
+<button class="hamburger" onclick="toggleMobileNav()">☰ Menu</button>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Home</a>
+  <a href="booking.html">📝 Booking</a>
+  <a href="training.html">🎓 Training</a>
+  <a href="contact.html">📞 Contact</a>
+  <a href="about.html">ℹ️ About</a>
+</nav>
+
+
   </header>
 
   <!-- Search Section -->
-  <div class="search-container">
+  <div class="search-container" style="position: relative;">
     <input type="text" id="searchInput" placeholder="Search modules or errors...">
     <button onclick="performSearch()">🔍</button>
     <div id="searchSuggestions" class="search-suggestions"></div>
@@ -61,62 +73,49 @@
 
   <!-- JavaScript -->
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const searchSuggestions = document.getElementById('searchSuggestions');
+  const searchData = [
+    { label: 'Creating Company in Tally', link: 'Modules/module1.html#company-creation' },
+    { label: 'Ledger and Voucher Entry', link: 'Modules/module2.html#voucher-entry' },
+    { label: 'Inventory Management', link: 'Modules/module3.html#inventory' },
+    { label: 'Payroll Setup', link: 'Modules/module4.html#payroll' },
+    { label: 'GST and VAT Setup', link: 'Modules/module5.html#gst-vat' },
+    { label: 'Bank Reconciliation', link: 'Modules/module6.html#brs' },
+    { label: 'Financial Reports', link: 'Modules/module7.html#reports' },
+    { label: 'Error Handling in Tally', link: 'Modules/module8.html#errors' }
+  ];
 
-    const searchData = [
-      'Tally Installation Guide',
-      'Creating Company in Tally',
-      'Voucher Entry Tutorial',
-      'Balance Sheet Generation',
-      'GST Configuration Error',
-      'Backup and Restore',
-      'Reports in Tally',
-      'Stock Management',
-      'Payroll Setup',
-      'Data Synchronization Issues'
-    ];
+  const searchInput = document.getElementById('searchInput');
+  const searchSuggestions = document.getElementById('searchSuggestions');
 
-    searchInput.addEventListener('input', function () {
-      const query = this.value.toLowerCase();
-      if (query.length > 0) {
-        const filtered = searchData.filter(item =>
-          item.toLowerCase().includes(query)
-        );
+  searchInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    if (query.length > 0) {
+      const filtered = searchData.filter(item =>
+        item.label.toLowerCase().includes(query)
+      );
 
-        if (filtered.length > 0) {
-          searchSuggestions.innerHTML = filtered
-            .map(item => `<div class="search-suggestion" onclick="selectSuggestion('${item}')">${item}</div>`)
-            .join('');
-          searchSuggestions.style.display = 'block';
-        } else {
-          searchSuggestions.style.display = 'none';
-        }
+      if (filtered.length > 0) {
+        searchSuggestions.innerHTML = filtered
+          .map(item => `<div class="search-suggestion" onclick="window.location.href='${item.link}'">${item.label}</div>`)
+          .join('');
+        searchSuggestions.style.display = 'block';
       } else {
-        searchSuggestions.style.display = 'none';
+        searchSuggestions.innerHTML = `<div class="search-suggestion">No matches found</div>`;
+        searchSuggestions.style.display = 'block';
       }
-    });
-
-    function selectSuggestion(suggestion) {
-      searchInput.value = suggestion;
+    } else {
       searchSuggestions.style.display = 'none';
-      performSearch();
     }
+  });
 
-    function performSearch() {
-      const query = searchInput.value.trim();
-      if (query) {
-        alert(`Searching for: "${query}"`);
-        // In the future: window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-      }
+  // Hide suggestions when clicking outside the input or suggestions
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('#searchInput') && !e.target.closest('#searchSuggestions')) {
+      searchSuggestions.style.display = 'none';
     }
+  });
+</script>
 
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.search-container')) {
-        searchSuggestions.style.display = 'none';
-      }
-    });
-  </script>
 
 </body>
 </html>
